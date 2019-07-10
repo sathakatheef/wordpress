@@ -9,6 +9,7 @@ Sample AWS Infrastructure using Terraform Infrastructure as Code service to cons
 │   │   ├ wordpress_nonprod.tfvars
 │   │   └ wordpress_prod.tfvars
 │   ├ modules
+│   │   ├ README.md
 │   │   ├ acm.tf
 │   │   ├ asg.tf
 │   │   ├ iam_roles.tf
@@ -24,7 +25,7 @@ Sample AWS Infrastructure using Terraform Infrastructure as Code service to cons
 │   ├ projects
 │   │   └ wordpress
 │   │       ├ dev
-│   │       │   ├ READ.md
+│   │       │   ├ README.md
 │   │       │   ├ aws-accounts.auto.tf -> ../../../variables/aws-accounts.tf
 │   │       │   ├ aws-global.auto.tf -> ../../../variables/aws-global.tf
 │   │       │   ├ backends.tf
@@ -32,6 +33,7 @@ Sample AWS Infrastructure using Terraform Infrastructure as Code service to cons
 │   │       │   ├ wordpress_dev.tf
 │   │       │   └ wordpress_nonprod.auto.tfvars -> ../../../environments/wordpress_nonprod.tfvars
 │   │       └ production
+│   │           ├ README.md
 │   │           ├ aws-accounts.auto.tf -> ../../../variables/aws-accounts.tf
 │   │           ├ aws-global.auto.tf -> ../../../variables/aws-global.tf
 │   │           ├ backends.tf
@@ -42,6 +44,7 @@ Sample AWS Infrastructure using Terraform Infrastructure as Code service to cons
 │       ├ aws-accounts.tf
 │       └ aws-global.tf
 └ certs
+    ├ README.md
     ├ cert-body.pem
     ├ cert-chain.pem
     └ cert-key.pem
