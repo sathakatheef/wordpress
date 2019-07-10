@@ -44,6 +44,8 @@
     logging_enabled                     = "false"
     alb_count                           = "1"
     nlb_count                           = "0"
+    alb_product_roles1 			= "pub-a"
+    alb_product_roles2 			= "pub-b"
     http_listeners_count                = "1"
     http_listeners_forward_rule_count   = "0"
     http_listeners_redirect_rule_count  = "0"
@@ -59,7 +61,9 @@
     alb_health_check_protocol = "http"
 
 #####RDS Variables######
-   engine       = "aurora-mysql"
-   port         = "3306"
-   max_capacity = ["1"]
-   min_capacity = ["1"]
+   engine            = "aurora-mysql"
+   port              = "3306"
+   max_capacity      = ["1"]
+   min_capacity      = ["1"]
+   db_product_roles1 = "db-a"
+   db_product_roles2 = "db-b"

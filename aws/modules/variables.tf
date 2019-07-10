@@ -45,6 +45,10 @@ variable "certificate_chain" {}
 variable "logging_enabled" {}
 variable "alb_count" {}
 variable "nlb_count" {}
+variable "alb_product_roles1" {}
+variable "alb_product_roles2" {}
+variable "nlb_product_roles1" {}
+variable "nlb_product_roles2" {}
 variable "http_listeners_count" {}
 variable "http_listeners" {default = []}
 variable "http_listeners_forward_rule_count" {}
@@ -80,3 +84,5 @@ variable "port" {}
 variable "db_backup_window" {}
 variable "max_capacity" {default = []}
 variable "min_capacity" {default = []}
+variable "db_product_roles1" {}
+variable "db_product_roles2" {}

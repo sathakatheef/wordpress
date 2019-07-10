@@ -15,6 +15,15 @@ output "subnet_private_ids" {
      )}"
 }
 
+output "subnet_public_ids" {
+  value = "${
+   map(
+    "pub-a", "${element(concat(aws_subnet.this-pub-sn.*.id,list("")), 0)}",
+    "pub-b", "${element(concat(aws_subnet.this-pub-sn.*.id,list("")), 1)}",
+     )
+     }"
+}
+
 output "subnet_id_db-a" {
   value = "${element(concat(aws_subnet.this-private-sn.*.id,list("")), 0)}"
 }

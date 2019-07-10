@@ -39,7 +39,7 @@ resource "aws_autoscaling_group" "this" {
   count                     = "${var.create_asg ? 1 : 0}"      ###This is set to 1 by default. So the count value will always be 1.
   name                      = "${var.environment == "dev" ? ${var.environment}-${element(var.product,count.index)}-${element(var.purpose,count.index)}-asg : prod-${element(var.product,count.index)}-${element(var.purpose,count.index)}-asg"
   launch_configuration      = "${var.create_lc ? element(aws_launch_configuration.this.*.name, 0) : var.launch_configuration}"
-  vpc_zone_identifier       = ["${lookup(aws_subnet.this-private-sn.subnet_private_ids, element(var.product_roles1, count.index))}","${lookup(aws_subnet.this-private-sn.subnte_private_ids, element(var.prodiuct_roles2, count.index))}"]
+  vpc_zone_identifier       = ["${lookup(aws_subnet.this-private-sn.subnet_private_ids, element(var.product_roles1, count.index))}","${lookup(aws_subnet.this-private-sn.subnet_private_ids, element(var.product_roles2, count.index))}"]                       ######Private subnets
   max_size                  = "${element(var.max_size,count.index)}"
   min_size                  = "${element(var.min_size,count.index)}"
   desired_capacity          = "${element(var.desired_capacity,count.index)}"

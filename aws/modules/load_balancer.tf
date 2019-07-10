@@ -5,7 +5,7 @@ resource "aws_lb" "this_alb" {
   name                             = "${var.environment}-${var.product}-alb"
   internal                         = "false"
   security_groups                  = ["${aws_default_security_group.this.id}", "${aws_security_group.this.id}"]
-  subnets                          = ["${lookup(aws_subnet.this-private-sn.subnet_private_ids, element(var.product_roles1, count.index))}","${lookup(aws_subnet.this-private-sn.subnte_private_ids, element(var.podiuct_roles2, count.index))}"]
+  subnets                          = ["${lookup(aws_subnet.this-pub-sn.subnet_public_ids, element(var.alb_product_roles1, count.index))}","${lookup(aws_subnet.this-pub-sn.subnet_public_ids, element(var.nlb_product_roles2, count.index))}"]                        ##########Public Subnets
   idle_timeout                     = "60"
   enable_cross_zone_load_balancing = "false"
   enable_deletion_protection       = "false"
@@ -31,7 +31,7 @@ resource "aws_lb" "this_nlb" {
   load_balancer_type               = "network"                     
   name                             = "${var.environment}-${var.product}-nlb"
   internal                         = "${var.load_balancer_is_internal}"                ###This is set to true by default.
-  subnets                          = ["${lookup(aws_subnet.this-private-sn.subnet_private_ids, element(var.product_roles1, count.index))}","${lookup(aws_subnet.this-private-sn.subnte_private_ids, element(var.podiuct_roles2, count.index))}"]
+  subnets                          = ["${lookup(aws_subnet.this-pub-sn.subnet_public_ids, element(var.nlb_product_roles1, count.index))}","${lookup(aws_subnet.this-pub-sn.subnet_public_ids, element(var.nlb_product_roles2, count.index))}"]                ##########Public Subnets
   idle_timeout                     = "60" 
   enable_cross_zone_load_balancing = "true"
   enable_deletion_protection       = "false"

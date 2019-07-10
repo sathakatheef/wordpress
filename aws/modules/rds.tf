@@ -2,7 +2,7 @@ resource "aws_rds_cluster" "aurora" {
   count = "${length(var.databases)}"
 
   cluster_identifier      = "${var.environment == "dev" ? ${var.environment}-${element(var.product,count.index)}-${element(var.purpose,count.index)}-aurora-rds : prod-${element(var.product,count.index)}-${element(var.purpose,count.index)}-aurora-rds"
-  availability_zones      = ["${lookup(aws_subnet.this-private-sn.subnet_private_ids, element(var.product_roles1, count.index))}","${lookup(aws_subnet.this-private-sn.subnte_private_ids, element(var.prodiuct_roles2, count.index))}"]
+  availability_zones      = ["${lookup(aws_subnet.this-private-sn.subnet_private_ids, element(var.db_product_roles1, count.index))}","${lookup(aws_subnet.this-private-sn.subnte_private_ids, element(var.db_product_roles2, count.index))}"]             ##########Private_subnets
   vpc_security_group_ids  = ["${aws_default_security_group.this.id}", "${aws_security_group.this.id}"]
   engine		  = "${var.engine}"
   database_name           = "${var.db_name}"
