@@ -1,0 +1,1 @@
+../../../environments/wordpres_nonprod.tfvars
