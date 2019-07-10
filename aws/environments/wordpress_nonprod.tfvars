@@ -41,25 +41,25 @@
    adjustment_type    = ["ChangeInCapacity"]
 
 ####Load Balancer Variables######
-    alb_count = "1"
-    nlb_count = "0"
-    http_listeners_count = "1"
-    http_listeners_forward_rule_count = "0"
-    http_listeners_redirect_rule_count = "0"
-    https_listeners_count = "1"
-    https_listeners_forward_rule_count = "1"
+    logging_enabled                     = "false"
+    alb_count                           = "1"
+    nlb_count                           = "0"
+    http_listeners_count                = "1"
+    http_listeners_forward_rule_count   = "0"
+    http_listeners_redirect_rule_count  = "0"
+    https_listeners_count               = "1"
+    https_listeners_forward_rule_count  = "1"
     https_listeners_redirect_rule_count = "0"
-    tcp_listeners_count = "0"
+    tcp_listeners_count                 = "0"
 
 #####Target Group Variables#####
-    alb_backend_port = "80"
-    alb_backend_protocol = "http"
-    alb_health_check_port = "80"
+    alb_backend_port          = "80"
+    alb_backend_protocol      = "http"
+    alb_health_check_port     = "80"
     alb_health_check_protocol = "http"
 
 #####RDS Variables######
-   databases = "1"
-   engine = "aurora-mysql"
-   port = "3306"
+   engine       = "aurora-mysql"
+   port         = "3306"
    max_capacity = ["1"]
    min_capacity = ["1"]

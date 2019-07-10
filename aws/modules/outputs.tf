@@ -70,3 +70,7 @@ output "security_group_id" {
 output "sg-default-id" {
   value = "${aws_default_security_group.this.id}"
 }
+
+output "rds_arn" {
+  value = "${aws_rds_cluster.aurora.id}"
+}
