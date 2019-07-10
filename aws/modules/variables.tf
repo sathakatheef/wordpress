@@ -3,20 +3,20 @@ variable "region" {default = "ap-southeast-2"}
 variable "environment" {}
 variable "product" {}
 variable "purpose" {}
-variable "product_component" {}
 
+####Key Pair Variables#####
+variable "pub_key" {}
+
+####Security Group Variables#####
+varibale "sg_purpose" {}
 
 #####ASG Variables#####
-variable "private_key_path" {}
 variable "tpl_file_path" {}
 variable "tpl_file" {}
 variable "elb_count" {}
 variable "tg_count" {}
 variable "policy_count" {}
 variable "notify_count" {}
-variable "env_number" {default = []}
-variable "product" {default = []}
-variable "purpose" {default = []}
 variable "root_volume_size" {}
 variable "min_size" {default = []}
 variable "max_size" {default = []}
@@ -27,8 +27,7 @@ variable "create_lc" {}
 variable "create_asg" {}
 variable "image_id" {}
 variable "instance_type" {}
-variable "ket_pair_name" {}
-variable "product_component" {}
+variable "key_pair_name" {}
 variable "elb_id" {}
 variable "scaling_adjustment" {default = []}
 variable "adjustment_type" {default = []}
@@ -62,8 +61,6 @@ variable "tcp_listeners_count" {}
 variable "tcp_listeners" {default = []}
 
 #####Target Group Variables#####
-variable "alb_count" {}
-variable "nlb_count" {}
 variable "alb_backend_port" {}
 variable "alb_backend_protocol" {}
 variable "nlb_backend_port" {}

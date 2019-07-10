@@ -1,10 +1,3 @@
-########Decleration of Private key along with it's path####
-data "null_data_source" "private_key_file" {
-  inputs = {
-    private_key_file = "${file("${var.private_key_path}")}"
-  }
-}
-
 ###Check for User Data
 data "template_file" "user_data" {
 ###If the user data file is empty, user_data wont be computed, otherwise user data will be computed. An empty file must be specified for this logic to work (even if user data is not to be computed)
@@ -90,8 +83,8 @@ tags = [
       propagate_at_launch = true
     },
     {
-      key                 = "product_component"
-      value               = "${element(var.product_component,count.index}"
+      key                 = "purpose"
+      value               = "${element(var.purpose,count.index}"
       propagate_at_launch = true
     },
   ]

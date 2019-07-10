@@ -1,11 +1,11 @@
 ########Security Group########
 resource "aws_security_group" "this" {
-  name        = "${var.environment}-${var.product}-standard-sg"
+  name        = "${var.environment}-${var.product}-${var.sg_purpose}-sg"
   description = "Standard security group that allows all internal private IPs."
   vpc_id      = "${aws_vpc.this.id}"
 
   tags {
-    Name   = "${var.environment}-${var.product}-standard-sg"
+    Name   = "${var.environment}-${var.product}-${var.sg_purpose}-sg"
     Env    = "${var.environment}"
   }
 }

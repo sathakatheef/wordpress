@@ -1,0 +1,1 @@
+../../../environments/wordpress_prod.tfvars

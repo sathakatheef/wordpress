@@ -1,1 +1,1 @@
-../../../environments/wordpres_nonprod.tfvars
+../../../environments/wordpress_nonprod.tfvars
