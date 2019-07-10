@@ -45,7 +45,7 @@ Sample AWS Infrastructure using Terraform Infrastructure as Code service to cons
     └ cert-key.pem
 ~~~
 
-###Structure Definition
+### Structure Definition
 The structure is didvide in __two__ main structures, __modules__ and __projects__
 * modules sections will have all the resources part that are required.
 * projects section will have the variables that will be passed to the resources in the module section.
