@@ -72,5 +72,5 @@ output "sg-default-id" {
 }
 
 output "rds_arn" {
-  value = "${aws_rds_cluster.aurora.id}"
+  value = "${aws_rds_cluster.aurora.endpoint}"
 }

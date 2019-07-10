@@ -2,6 +2,9 @@
 data "template_file" "user_data" {
 ###If the user data file is empty, user_data wont be computed, otherwise user data will be computed. An empty file must be specified for this logic to work (even if user data is not to be computed)
     template = "${var.tpl_file == "" ? var.tpl_file : file("${var.tpl_file_path}")}"
+    vars = {
+             db_hostname = "${aws_rds_cluster.aurora.endpoint}"
+           }
 }
 
 ################## Launch configuration  ###################
