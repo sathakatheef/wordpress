@@ -1,4 +1,4 @@
-LB Creation################
+#####ALB Creation################
 resource "aws_lb" "this_alb" {
   count                            = "${var.logging_enabled ? 0 : var.alb_count}"      ###This is set to 0 by default. Change alb_count to 1 if ALB to be computed.
   load_balancer_type               = "application"

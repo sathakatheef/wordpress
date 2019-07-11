@@ -57,8 +57,7 @@ ose,count.index)}-tg"
   }
 
   tags {
-     Name              = "${var.environment == "dev" ? ${var.environment}-${element(var.product,count.index)}-${element(var.purpose,count.index)}-tg : prod--${element(var.product,count.index)}-${element(var.purp
-ose,count.index)}-tg"
+     Name              = "${var.environment == "dev" ? ${var.environment}-${element(var.product,count.index)}-${element(var.purpose,count.index)}-tg : prod-${element(var.product,count.index)}-${element(var.purpose,count.index)}-tg"
      environment       = "${var.environment == "dev" ? var.environment : "prod"}"
      product           = "${var.product}"
      product_component = "${var.product_component}"

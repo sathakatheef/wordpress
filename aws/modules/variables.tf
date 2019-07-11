@@ -8,7 +8,7 @@ variable "purpose" {}
 variable "pub_key" {}
 
 ####Security Group Variables#####
-varibale "sg_purpose" {}
+variable "sg_purpose" {}
 
 #####ASG Variables#####
 variable "tpl_file_path" {}
